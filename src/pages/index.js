@@ -1,16 +1,17 @@
 import React from 'react';
 // import { Link } from 'gatsby';
-import book from '../cover.jpg';
+// import headshot from '../img/WilliamDeverell.jpg';
+import headshot from '../../img/WilliamDeverell.jpg'
 import '../styles/styles.css';
 
 export default () => (
   <>
     <h1>William Deverell</h1>
     <img
-      src="img/WilliamDeverell.jpg"
+      src={headshot}
       alt="William Deverell"
       width="300"
-      style="float: left; margin-right: 1rem"
+      style={{float: 'left', marginRight: '1rem'}}
     />
     <p>
       While working his way through two degrees at the University of

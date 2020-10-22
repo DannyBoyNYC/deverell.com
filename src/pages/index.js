@@ -6,6 +6,9 @@ import '../styles/styles.css';
 
 export default () => (
   <>
+    <marquee behavior="" direction="">  My website is currently offline to permit some overdue updating and
+      modernizing. My Web mechanic is working on it as I compose this note. (And
+      no, it has not been hacked, it was just feeling its age.)</marquee>
     <h1>William Deverell</h1>
     <img
       src={headshot}
@@ -24,15 +27,15 @@ export default () => (
     </p>
     <p>
       His first novel, <em>Needles</em>, won the $50,000 Seal Prize in l979 and
-      the Book of the Year Award in l98l. His subsequent novels include
-      <em>High Crimes</em>, <em>Mecca</em>, <em>The Dance of Shiva</em>,
-      <em>Platinum Blues</em>, <em>Mindfield</em>,
-      <em>Kill All the Lawyers</em>, <em>Street Legal</em>,
-      <em>Trial of Passion</em>, <em>Slander</em>, <em>The Laughing Falcon</em>,
-      <em>Mind Games</em>, <em>April Fool</em>, <em>Kill All the Judges</em>,
-      <em>Snow Job</em>, <em>I'll See You in My Dreams</em>,
+      the Book of the Year Award in l98l. His subsequent novels include&nbsp;
+      <em>High Crimes</em>, <em>Mecca</em>, <em>The Dance of Shiva</em>,&nbsp;
+      <em>Platinum Blues</em>, <em>Mindfield</em>,&nbsp;
+      <em>Kill All the Lawyers</em>, <em>Street Legal</em>,&nbsp;
+      <em>Trial of Passion</em>, <em>Slander</em>, <em>The Laughing Falcon</em>,&nbsp;
+      <em>Mind Games</em>, <em>April Fool</em>, <em>Kill All the Judges</em>,&nbsp;
+      <em>Snow Job</em>, <em>I'll See You in My Dreams</em>,&nbsp;
       <em>Sing a Worried Song</em>, and <em>Whipped</em>. He is author of the
-      true crime book <em>A Life on Trial – the Case of Robert Frisbee</em>,
+      true crime book <em>A Life on Trial – the Case of Robert Frisbee</em>,&nbsp;
       based on a celebrated murder trial which he defended. His novels have been
       translated into fourteen languages and sold worldwide. All but two
       continue in print.
@@ -54,12 +57,6 @@ export default () => (
       University of Saskatchewan, which holds his archives.
     </p>
     <h2>Read more</h2>
-    <p>
-      <a
-        href="https://ecwpress.com/blogs/whats-new/47175685-meet-william-deverell?_pos=1&_sid=7135836e6&_ss=r"
-        >Meet William Deverell</a
-      >
-    </p>
     <div class="booklist">
       <a href="https://ecwpress.com/products/stung">
         <img
@@ -115,11 +112,6 @@ export default () => (
           alt="High Crimes book cover"
         />
       </a>
-      <p>
-        <a href="https://ecwpress.com/search?q=William+deverell"
-          >View all books</a
-        >
-      </p>
     </div>
   </>
 );

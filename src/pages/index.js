@@ -1,14 +1,16 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 // import headshot from '../img/WilliamDeverell.jpg';
+// import sanityClient from '../../sanityClient'
 import headshot from '../../img/WilliamDeverell.jpg'
 import '../styles/styles.css';
 
 export default () => (
   <>
     <marquee behavior="" direction="">  My website is currently offline to permit some overdue updating and
-      modernizing. My Web mechanic is working on it as I compose this note. (And
+    modernizing. My Web mechanic is working on it as I compose this note. (And
       no, it has not been hacked, it was just feeling its age.)</marquee>
+    
     <h1>William Deverell</h1>
     <img
       src={headshot}
@@ -56,7 +58,7 @@ export default () => (
       five years later received a second honourary D. Litt from the the
       University of Saskatchewan, which holds his archives.
     </p>
-    <h2>Read more</h2>
+    <h2>Books</h2>
     <div class="booklist">
       <a href="https://ecwpress.com/products/stung">
         <img

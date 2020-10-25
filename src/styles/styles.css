@@ -12,6 +12,15 @@ body {
 a {
   color: #eee;
 }
+.bio figure {
+  margin-left: 0;
+  
+}
+.bio img {
+  margin-right: 2rem;
+  max-width: 320px;
+  float: left;
+}
 .booklist a {
   outline: 1px solid transparent;
   margin: 2rem;

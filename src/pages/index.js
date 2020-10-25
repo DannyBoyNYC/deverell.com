@@ -18,13 +18,13 @@ export default function HomePage({ data: { posts } }) {
         (And no, it has not been hacked, it was just feeling its age.)
       </marquee>
 
-      {/* <h1>William Deverell</h1> */}
-
-      <Bio bio={posts.nodes.filter((post) => post.title === 'Biography')} />
+      <h1>William Deverell</h1>
       
       <h2>My latest — due in March, 2021</h2>
       <img src={stung} alt='stung cover' style={{ maxWidth: '820px' }} />
       <p>Arthur Beauchamp takes on the most explosive trial of his career: the defence of seven boisterous environmentalists accused of sabotaging a plant in Ontario that pumps out a pesticide that has led to the mass deaths of honeybees. The story zigzags between Toronto, where the trial takes place, and Arthur's West Coast island home where he finds himself arrested for fighting his own environmental cause: the threatened destruction of a popular park. The Toronto trial concludes with a tense, hang-by-the-fingernails jury verdict. The story is told from points of view of Arthur and a vibrant young woman activist and a tough, cynical OPP Inspector. Throughout, Arthur struggles to save his marriage.</p>
+
+      <Bio bio={posts.nodes.filter((post) => post.title === 'Biography')} />
 
       <h2>Books</h2>
       <div className="booklist">

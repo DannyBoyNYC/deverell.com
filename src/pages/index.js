@@ -11,7 +11,7 @@ import "../styles/styles.css";
 
 export default function HomePage({ data: { posts } }) {
   const pageName = 'home';
-  console.log("posts ", posts.nodes);
+  // console.log("posts ", posts.nodes);
   // console.log('filtered ', posts.nodes.filter( (item) => item.title === 'Biography') )
   return (
     <>

@@ -27,7 +27,7 @@ const PortableText = ({ blocks }) => (
 const Bio = ({ bio }) => {
   return (
     <div className='bio'>
-      <h1>{bio[0].author.name} &mdash; {bio[0].title}</h1>
+      <h2>{bio[0].author.name} &mdash; {bio[0].title}</h2>
       <PortableText blocks={bio[0]._rawBody} />
     </div>
   );

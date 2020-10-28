@@ -12,7 +12,7 @@ const SidebarStyles = styled.div`
     display: flex;
   }
   .sidebar {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     background-color: var(--black);
     @media (min-width: 1266px) {
       min-height: 100vh;

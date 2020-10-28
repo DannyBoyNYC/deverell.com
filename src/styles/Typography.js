@@ -29,7 +29,7 @@ const Typography = createGlobalStyle`
     padding-bottom:0.4rem;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   a {
     color: var(--black);

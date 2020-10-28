@@ -1,16 +1,16 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-// import { Link } from 'gatsby';
+// import { graphql } from 'gatsby';
+import { Link } from 'gatsby';
 // import sanityClient from '../../sanityClient'
 // import Img from 'gatsby-image'
 import stung from '../../img/stung-full-cover.png';
-import Bio from '../components/Bio';
+// import Bio from '../components/Bio';
 // import Sidebar from '../components/Sidebar';
 import Nav from '../components/Nav';
 import '../styles/styles.css';
 
-export default function HomePage({ data: { posts } }) {
-  const pageName = 'home';
+export default function HomePage() {
+  const pageName = 'homepage';
   // console.log("posts ", posts.nodes);
   // console.log('filtered ', posts.nodes.filter( (item) => item.title === 'Biography') )
   return (
@@ -21,12 +21,12 @@ export default function HomePage({ data: { posts } }) {
           {/* <Sidebar pagename={pageName} /> */}
           <div className="page-details">
             <h1>William Deverell</h1>
-            {/* <h2>{pageName}</h2> */}
+            <h2>{pageName}</h2>
             <p>
-              My website is currently offline to permit some overdue updating
-              and modernizing. My Web mechanic is working on it as I compose
-              this note. (And no, it has not been hacked, it was just feeling
-              its age.)
+              My website is currently being re-developed to permit some overdue
+              updating and modernizing. My Web mechanic is working on it as I
+              compose this note. (And no, it has not been hacked, it was just
+              feeling its age.)
             </p>
           </div>
         </div>
@@ -34,6 +34,21 @@ export default function HomePage({ data: { posts } }) {
 
       <div className="main">
         <div className="container" pagename={pageName}>
+          <h2>
+            <Link to="/blog/">The Art of the Memoir</Link>
+          </h2>
+          <p>
+            As I reorganize my Blog, this seems an opportune time to revise and
+            post a short short story published a while ago by Maclean's Magazine
+            in a tongue-in-cheek series titled <em>Trump’s Last Chapter</em>.
+            Several Canadian authors were asked to envision Donald Trump's
+            downfall.
+            <br />
+            <Link to="/blog/">This is my take on it...</Link>
+          </p>
+
+          <hr />
+
           <a href="https://ecwpress.com/products/stung">
             <h2>My Latest</h2>
           </a>
@@ -65,11 +80,7 @@ export default function HomePage({ data: { posts } }) {
           </p>
 
           <hr />
-          
-          <Bio bio={posts.nodes.filter((post) => post.title === 'Biography')} />
-
-          <hr />
-          <h2>Books</h2>
+          <h2>All Publications</h2>
           <div className="booklist">
             <a href="https://ecwpress.com/products/stung">
               <img
@@ -131,26 +142,3 @@ export default function HomePage({ data: { posts } }) {
     </>
   );
 }
-
-export const query = graphql`
-  query AllSanityPost {
-    posts: allSanityPost {
-      nodes {
-        title
-        author {
-          name
-        }
-        mainImage {
-          asset {
-            url
-            path
-            fluid(maxWidth: 300) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        _rawBody
-      }
-    }
-  }
-`;

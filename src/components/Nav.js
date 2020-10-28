@@ -22,6 +22,7 @@ const NavStyles = styled.nav`
       display: block;
       padding: 6em 0.5em 0.5em 0.5em;
       color: white;
+      text-decoration: none;
     }
   }
 `;
@@ -36,19 +37,19 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          {/* <Link to="/blog/" activeClassName="activeStyles">
+          <Link to="/blog/" activeClassName="activeStyles">
             blog
-          </Link> */}
+          </Link>
         </li>
-        <li>
-          {/* <Link to="/books/" activeClassName="activeStyles">
+        {/* <li>
+          <Link to="/books/" activeClassName="activeStyles">
             books
-          </Link> */}
-        </li>
+          </Link>
+        </li> */}
         <li>
-          {/* <Link to="/bio/" activeClassName="activeStyles">
+          <Link to="/biography/" activeClassName="activeStyles">
             biography
-          </Link> */}
+          </Link>
         </li>
       </ul>
     </NavStyles>

@@ -33,8 +33,8 @@ const Typography = createGlobalStyle`
   }
   a {
     color: var(--black);
-    text-decoration: none;
-    text-decoration-color: var(--grey);
+    /* text-decoration: none; */
+    /* text-decoration-color: var(--grey); */
     /* Chrome renders this weird with this font, so we turn it off */
     /* text-decoration-skip-ink: none; */
   }

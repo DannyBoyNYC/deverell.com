@@ -14,13 +14,15 @@ const Blog = ({ data: { posts } }) => {
             <h1>William Deverell</h1>
             <h2>{pageName}</h2>
             <p>
-              My various noodlings. Mostly, but not exclusively, about my books.
+              The future home of my various noodlings. Mostly, but not
+              exclusively, about my books.
             </p>
           </div>
         </div>
       </div>
       <div className="main">
         <div className="container" pagename={pageName}>
+          <h2>{posts.nodes[0].title}</h2>
           <PortableText blocks={posts.nodes[0]._rawBody} />
           <Link to="/">&larr; back to home</Link>
         </div>

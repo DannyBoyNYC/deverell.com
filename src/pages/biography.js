@@ -11,7 +11,7 @@ const Biography = ({ data: { bio } }) => {
         <div className="sidebar-container">
           <Nav />
           <div className="page-details">
-            <h1>William Deverell</h1>
+            <h1>A Bit About William Deverell</h1>
             <h2>{pageName}</h2>
             <p>
               William Deverell, Winner of the Dashiell Hammett Award for

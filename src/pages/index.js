@@ -1,18 +1,11 @@
 import React from 'react';
-// import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-// import sanityClient from '../../sanityClient'
-// import Img from 'gatsby-image'
 import stung from '../../img/stung-full-cover.png';
-// import Bio from '../components/Bio';
-// import Sidebar from '../components/Sidebar';
 import Nav from '../components/Nav';
 import '../styles/styles.css';
 
 export default function HomePage() {
   const pageName = 'homepage';
-  // console.log("posts ", posts.nodes);
-  // console.log('filtered ', posts.nodes.filter( (item) => item.title === 'Biography') )
   return (
     <>
       <div className="sidebar">

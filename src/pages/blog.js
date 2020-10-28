@@ -41,15 +41,6 @@ export const query = graphql`
         author {
           name
         }
-        mainImage {
-          asset {
-            url
-            path
-            fluid(maxWidth: 300) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
         _rawBody
       }
     }

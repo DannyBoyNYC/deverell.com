@@ -30,6 +30,7 @@ const Typography = createGlobalStyle`
   }
   h2 {
     font-size: 1.75rem;
+    line-height: 1;
   }
   a {
     color: var(--black);
@@ -48,10 +49,6 @@ const Typography = createGlobalStyle`
 
   .center {
     text-align: center;
-  }
-
-  .tilt {
-    transform: rotate(-2deg);
   }
 `;
 

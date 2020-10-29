@@ -9,6 +9,14 @@ module.exports = {
     description: 'The website of William Deverell',
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/img/`,
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',

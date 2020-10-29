@@ -5,16 +5,14 @@ import Nav from '../components/Nav';
 import '../styles/styles.css';
 
 export default function HomePage() {
-  const pageName = 'homepage';
   return (
     <>
       <div className="sidebar">
         <div className="sidebar-container">
           <Nav />
-          {/* <Sidebar pagename={pageName} /> */}
           <div className="page-details">
             <h1>William Deverell</h1>
-            <h2>{pageName}</h2>
+            <h2>Please note</h2>
             <p>
               My website is currently being re-developed to permit some overdue
               updating and modernizing. My Web mechanic is working on it as I
@@ -26,7 +24,7 @@ export default function HomePage() {
       </div>
 
       <div className="main">
-        <div className="container" pagename={pageName}>
+        <div className="container">
           <h2>
             <Link to="/blog/">The Art of the Memoir</Link>
           </h2>
@@ -51,7 +49,6 @@ export default function HomePage() {
               src={stung}
               alt="stung cover"
               style={{
-                maxWidth: '620px',
                 border: '1px solid #999',
                 marginTop: '1rem',
               }}

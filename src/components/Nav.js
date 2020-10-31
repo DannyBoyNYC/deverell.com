@@ -41,11 +41,11 @@ export default function Nav() {
             blog
           </Link>
         </li>
-        {/* <li>
+        <li>
           <Link to="/books/" activeClassName="activeStyles">
             books
           </Link>
-        </li> */}
+        </li>
         <li>
           <Link to="/biography/" activeClassName="activeStyles">
             biography

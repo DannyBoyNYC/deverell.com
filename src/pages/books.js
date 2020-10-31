@@ -1,19 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+import styled from 'styled-components';
+
 import Img from 'gatsby-image';
 import Nav from '../components/Nav';
 // import PortableText from '../components/portableText';
 
+const BookGridSC = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 4rem;
+  grid-auto-rows: auto auto 300px;
+`;
+
+const BookLinkSC = styled.a`
+  text-decoration: none;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  grid-gap: 0.5rem;
+  h2,
+  p {
+    margin: 0;
+  }
+`;
+
 const SingleBook = ({ book }) => {
-  const { title, link } = book;
+  const { title, link, pubdate } = book;
+
+  const date = new Date(pubdate);
+  const pubYear = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+  }).format(date);
+
   return (
-    <div>
-      <Link to={link} target="_blank">
-        <h2 className="">{title}</h2>
-        <Img fluid={book.image.asset.fluid} alt={title} />
-      </Link>
-    </div>
+    <BookLinkSC href={link} target="_blank">
+      <h2>{title}</h2>
+      <p>Published {pubYear}</p>
+      <Img fluid={book.image.asset.fluid} alt={title} />
+    </BookLinkSC>
   );
 };
 
@@ -24,18 +50,23 @@ const Books = ({ data: { books } }) => (
         <Nav />
         <div className="page-details">
           <h1>Books by William Deverell</h1>
-          {/* <h2>biography</h2> */}
-          <p>Read more about these books at the publisher's website.</p>
+          <p>
+            Select a title to read more about these books at the publisher's
+            website.
+          </p>
         </div>
       </div>
     </div>
     <div className="main ">
-      <div className="container booklist">
-        {books.nodes.map((book) => (
-          <SingleBook book={book} />
-        ))}
-
-        <Link to="/">&larr; back to home</Link>
+      <div className="container">
+        <BookGridSC>
+          {books.nodes.map((book) => (
+            <SingleBook key={book.id} book={book} />
+          ))}
+        </BookGridSC>
+        <div>
+          <Link to="/">&larr; back to home</Link>
+        </div>
       </div>
     </div>
   </>
@@ -60,7 +91,7 @@ export const query = graphql`
         slug {
           current
         }
-        # pubdate
+        pubdate
         link
         image {
           asset {

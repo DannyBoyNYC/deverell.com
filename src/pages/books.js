@@ -20,6 +20,9 @@ const BookLinkSC = styled.a`
   grid-template-rows: subgrid;
   grid-row: span 3;
   grid-gap: 0.5rem;
+  &:hover {
+    opacity: 0.7;
+  }
   h2,
   p {
     margin: 0;
@@ -51,7 +54,7 @@ const Books = ({ data: { books } }) => (
         <div className="page-details">
           <h1>Books by William Deverell</h1>
           <p>
-            Select a title to read more about these books at the publisher's
+            Select a title to read more about these books on the publisher's
             website.
           </p>
         </div>

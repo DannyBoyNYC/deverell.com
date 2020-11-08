@@ -142,7 +142,7 @@ export const HomePageQuery = graphql`
         }
         title
         publishedAt
-        image {
+        mainImage {
           asset {
             fluid(maxWidth: 800) {
               ...GatsbySanityImageFluid

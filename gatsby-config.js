@@ -11,12 +11,12 @@ module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/img/`,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/img/`,
+    //   },
+    // },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',

@@ -8,7 +8,7 @@
   float: right;
   border-radius: 4px;
 }
-.booklist {
+/* .booklist {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
@@ -16,4 +16,4 @@
 }
 .booklist a:hover {
   opacity: 0.75;
-}
+} */

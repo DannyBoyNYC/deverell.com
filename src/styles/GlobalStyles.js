@@ -6,21 +6,18 @@ const GlobalStyles = createGlobalStyle`
     --lt-gray: #999;
     --layout-gray: rgba(255, 255, 255, 0.7);
     --red: #FF4949;
-    --black: #171717;
+    --black: #222222;
     --yellow: #ffc600;
     --white: #fff;
     --grey: #efefef;
-  }
-  html {
-    /* background-size: 450px;
-    background-attachment: fixed;
-    font-size: 10px; */
+    --green: #bada55;
+    --blue: #205e80;
   }
 
   body {
     font-size: 1rem;
     line-height: 1.4;
-    background-color: var(--layout-gray)
+    background-color: #161616;
   }
 
   fieldset {
@@ -44,10 +41,10 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .gatsby-image-wrapper img[src*=base64\\,] {
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-  }
+    /* .gatsby-image-wrapper img[src*=base64\\,] {
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
+    } */
 
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
@@ -69,8 +66,6 @@ const GlobalStyles = createGlobalStyle`
   hr {
     border: 1px solid var(--lt-gray);
     margin: 3rem 0 1rem 0;
-    /* height: 1px; */
-    /* background-size: 1500px; */
   }
 
   img {

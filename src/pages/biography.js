@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+
 import Nav from '../components/Nav';
+import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
 
 const Biography = ({ data: { bio } }) => (
@@ -9,11 +12,11 @@ const Biography = ({ data: { bio } }) => (
       <div className="sidebar-container">
         <Nav />
         <div className="page-details">
-          <h1>A Bit About William Deverell</h1>
-          <h2>biography</h2>
+          <h1>About William Deverell</h1>
+          <h2 className="side-subhead">~ biography ~</h2>
           <p>
-            William Deverell, Winner of the Dashiell Hammett Award for Literary
-            Excellence in North American Crime Writing
+            Winner of the Dashiell Hammett Award for Literary Excellence in
+            North American Crime Writing
           </p>
         </div>
       </div>
@@ -21,11 +24,15 @@ const Biography = ({ data: { bio } }) => (
     <div className="main bio">
       <div className="container">
         <PortableText blocks={bio.nodes[0]._rawBody} />
-        <Link to="/">&larr; back to home</Link>
+        <HomeLink />
       </div>
     </div>
   </>
 );
+
+Biography.propTypes = {
+  data: PropTypes.object,
+};
 
 export default Biography;
 

@@ -1,18 +1,28 @@
+import { format } from 'date-fns';
 import React from 'react';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+
 import stung from '../../img/stung-full-cover.png';
+
 import Nav from '../components/Nav';
+import HomeLink from '../components/link/Link';
+import PortableText from '../components/portableText';
+
 import '../styles/styles.css';
 
-export default function HomePage() {
+function HomePage({ data: { posts } }) {
+  const { nodes } = posts;
+
   return (
     <>
       <div className="sidebar">
         <div className="sidebar-container">
           <Nav />
           <div className="page-details">
-            <h1>William Deverell</h1>
-            <h2>Please note</h2>
+            <h1>Welcome</h1>
+            <h2 className="side-subhead">~ nota bene ~</h2>
             <p>
               My website is currently being re-developed to permit some overdue
               updating and modernizing. My Web mechanic is working on it as I
@@ -25,53 +35,36 @@ export default function HomePage() {
 
       <div className="main">
         <div className="container">
-          <h2>
-            <Link to="/blog/">The Art of the Memoir</Link>
-          </h2>
-          <p>
-            As I reorganize my Blog, this seems an opportune time to revise and
-            post a short short story published a while ago by Maclean's Magazine
-            in a tongue-in-cheek series titled <em>Trump’s Last Chapter</em>.
-            Several Canadian authors were asked to envision Donald Trump's
-            downfall.
-            <br />
-            <Link to="/blog/">This is my take on it...</Link>
-          </p>
+          {nodes.map((node) => (
+            <div key={node.id}>
+              <p className="small">
+                {format(new Date(node.publishedAt), 'MMMM d, yyyy')}
+              </p>
+              <h2>
+                <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
+              </h2>
+              {node.image && (
+                <div
+                  className="main-image-container"
+                  style={{ marginTop: '1rem' }}
+                >
+                  <Img fluid={node.image.asset.fluid} />
+                </div>
+              )}
+              <PortableText blocks={node._rawExcerpt} />
+            </div>
+          ))}
+
+          <HomeLink />
+          <br />
+          <pre>{JSON.stringify(nodes, null, 2)}</pre>
 
           <hr />
 
-          <a href="https://ecwpress.com/products/stung">
-            <h2>My Latest</h2>
-          </a>
-          <h3>due in March, 2021</h3>
-          <a href="https://ecwpress.com/products/stung">
-            <img
-              src={stung}
-              alt="stung cover"
-              style={{
-                border: '1px solid #999',
-                marginTop: '1rem',
-              }}
-            />
-          </a>
+          {/* <hr />
+            <h2>All Publications</h2> */}
 
-          <p>
-            Arthur Beauchamp takes on the most explosive trial of his career:
-            the defence of seven boisterous environmentalists accused of
-            sabotaging a plant in Ontario that pumps out a pesticide that has
-            led to the mass deaths of honeybees. The story zigzags between
-            Toronto, where the trial takes place, and Arthur's West Coast island
-            home where he finds himself arrested for fighting his own
-            environmental cause: the threatened destruction of a popular park.
-            The Toronto trial concludes with a tense, hang-by-the-fingernails
-            jury verdict. The story is told from points of view of Arthur and a
-            vibrant young woman activist and a tough, cynical OPP Inspector.
-            Throughout, Arthur struggles to save his marriage.
-          </p>
-
-          <hr />
-          <h2>All Publications</h2>
-          <div className="booklist">
+          {/* <div className="booklist">
             <a href="https://ecwpress.com/products/stung">
               <img
                 src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781770415959_c6938034-ab0d-4ddf-ac27-7ebc06588352_1024x1024.jpg?v=1603140835"
@@ -126,9 +119,38 @@ export default function HomePage() {
                 alt="High Crimes book cover"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 }
+
+HomePage.propTypes = {
+  data: PropTypes.object,
+};
+
+export default HomePage;
+
+export const HomePageQuery = graphql`
+  query AllSanityPost {
+    posts: allSanityPost {
+      nodes {
+        id
+        slug {
+          current
+        }
+        title
+        publishedAt
+        image {
+          asset {
+            fluid(maxWidth: 800) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        _rawExcerpt
+      }
+    }
+  }
+`;

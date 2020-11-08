@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import 'normalize.css';
 import GlobalStyles from '../styles/GlobalStyles';
@@ -25,18 +26,24 @@ const SidebarStyles = styled.div`
     margin-left: auto;
     margin-right: auto;
     @media (min-width: 1266px) {
-      width: 60%;
-      margin-right: 3rem;
-      max-width: 600px;
+      /* width: 60%; */
+      /* margin-right: 3rem; */
+      /* max-width: 600px; */
+    }
+    .side-subhead {
+      font-style: italic;
+      font-size: 2.25rem;
+      margin-top: 1.25rem;
     }
   }
   .main {
-    background-color: #fff;
+    background-color: #e6e6e6;
+    background-image: url('../assets/images/rag.png');
     @media (min-width: 1266px) {
       width: 60%;
     }
     .container {
-      width: 80%;
+      width: 94%;
       padding-top: 3em;
       padding-bottom: 4em;
       margin-left: auto;
@@ -53,11 +60,15 @@ const SidebarStyles = styled.div`
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
       <GlobalStyles />
       <Typography />
       <SidebarStyles>{children}</SidebarStyles>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.object,
+};

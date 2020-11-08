@@ -1,27 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-import font from '../assets/fonts/placardmtstd-cond-webfont.woff';
 
 const Typography = createGlobalStyle`
-  @font-face {
-    font-family: Placard;
-    src: url(${font});
-  }
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  body {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; 
     color: var(--black);
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.5;
   }
   p, li {
     letter-spacing: 0.5px;
+    font-size: 1.3rem;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
     margin: 0;
   }
   h1 {
-    font-family: Placard, arial, sans-serif;
-    font-size: 3.8em;
+    font-size: 3rem;
     line-height: 1;
-    text-transform: uppercase;
     font-weight: normal;
     margin-top:0;
     margin-bottom:0;
@@ -31,13 +28,19 @@ const Typography = createGlobalStyle`
   h2 {
     font-size: 1.75rem;
     line-height: 1;
+    font-weight: normal;
   }
   a {
-    color: var(--black);
-    /* text-decoration: none; */
-    /* text-decoration-color: var(--grey); */
-    /* Chrome renders this weird with this font, so we turn it off */
-    /* text-decoration-skip-ink: none; */
+    color: var(--blue);
+    text-decoration: none;
+&:hover {
+  text-decoration: underline;
+}
+  }
+  h2 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 2.25rem;
   }
   mark, .mark {
     background: var(--yellow);
@@ -49,6 +52,13 @@ const Typography = createGlobalStyle`
 
   .center {
     text-align: center;
+  }
+  .small {
+    margin: 0;
+    margin-bottom: 0.25rem;
+    margin-top: 2.5rem;
+    font-size: 0.875rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 `;
 

@@ -8,20 +8,26 @@ const NavStyles = styled.nav`
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 2rem;
+    gap: 0.25rem;
     justify-items: center;
   }
   li {
     font-size: 0.9em;
     width: 100%;
+
     & .activeStyles {
-      background: white;
-      color: var(--black);
+      background: var(--blue);
+      color: #fff;
+      border-radius: 0 0 4px 4px;
     }
     a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 800;
       display: block;
+      border-radius: 0 0 2px 2px;
       padding: 6em 0.5em 0.5em 0.5em;
-      color: white;
+      color: var(--lt-gray);
       text-decoration: none;
     }
   }
@@ -37,7 +43,7 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/blog/" activeClassName="activeStyles">
+          <Link to="/blog/" activeClassName="activeStyles" partiallyActive>
             blog
           </Link>
         </li>

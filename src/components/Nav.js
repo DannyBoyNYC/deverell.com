@@ -17,13 +17,13 @@ const NavStyles = styled.nav`
 
     & .activeStyles {
       background: var(--blue);
-      color: #fff;
+      color: var(--eelt-gray);
       border-radius: 0 0 4px 4px;
     }
     a {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-weight: 800;
+      font-weight: 600;
       display: block;
       border-radius: 0 0 2px 2px;
       padding: 6em 0.5em 0.5em 0.5em;
@@ -39,22 +39,22 @@ export default function Nav() {
       <ul>
         <li>
           <Link to="/" activeClassName="activeStyles">
-            home
+            Home
           </Link>
         </li>
         <li>
           <Link to="/blog/" activeClassName="activeStyles" partiallyActive>
-            blog
+            Blog
           </Link>
         </li>
         <li>
           <Link to="/books/" activeClassName="activeStyles">
-            books
+            Books
           </Link>
         </li>
         <li>
           <Link to="/biography/" activeClassName="activeStyles">
-            biography
+            Biography
           </Link>
         </li>
       </ul>

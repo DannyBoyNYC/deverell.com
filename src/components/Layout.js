@@ -32,8 +32,8 @@ const SidebarStyles = styled.div`
     }
     .side-subhead {
       font-style: italic;
-      font-size: 2.25rem;
-      margin-top: 1.25rem;
+      font-size: 2rem;
+      margin-top: 1rem;
     }
   }
   .main {

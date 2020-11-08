@@ -18,6 +18,7 @@ const Typography = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
+    letter-spacing: -1px;
     line-height: 1;
     font-weight: normal;
     margin-top:0;
@@ -27,6 +28,7 @@ const Typography = createGlobalStyle`
   }
   h2 {
     font-size: 1.75rem;
+    letter-spacing: -0.5px;
     line-height: 1;
     font-weight: normal;
   }

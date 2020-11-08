@@ -2,8 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --dk-gray: #666;
+    --eelt-gray: #eee;
+    --elt-gray: #ccc;
     --lt-gray: #999;
+    --dk-gray: #666;
+    --edk-gray: #333;
     --layout-gray: rgba(255, 255, 255, 0.7);
     --red: #FF4949;
     --black: #222222;
@@ -17,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 1rem;
     line-height: 1.4;
-    background-color: #161616;
+    background-color: var(--black);
   }
 
   fieldset {

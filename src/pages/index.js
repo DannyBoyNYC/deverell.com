@@ -57,7 +57,7 @@ function HomePage({ data: { posts } }) {
 
           <HomeLink />
           <br />
-          <pre>{JSON.stringify(nodes, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(nodes, null, 2)}</pre> */}
 
           <hr />
 

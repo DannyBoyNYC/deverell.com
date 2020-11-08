@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import stung from '../../img/stung-full-cover.png';
+// import stung from '../../img/stung-full-cover.png';
 
 import Nav from '../components/Nav';
 import HomeLink from '../components/link/Link';

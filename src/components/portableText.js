@@ -16,7 +16,7 @@ const PortableText = ({ blocks }) => (
 );
 
 PortableText.propTypes = {
-  blocks: PropTypes.object,
+  blocks: PropTypes.array,
 };
 
 export default PortableText;

@@ -8,12 +8,12 @@ const NavStyles = styled.nav`
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 0.25rem;
+    gap: 0.5rem;
     justify-items: center;
   }
   li {
     font-size: 0.9em;
-    width: 100%;
+    width: 90%;
 
     & .activeStyles {
       background: var(--blue);

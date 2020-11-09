@@ -38,7 +38,7 @@ const SidebarStyles = styled.div`
   }
   .main {
     background-color: #e6e6e6;
-    background-image: url('../assets/images/rag.png');
+    /* background-image: url('../assets/images/rag.png'); */
     @media (min-width: 1266px) {
       width: 60%;
     }

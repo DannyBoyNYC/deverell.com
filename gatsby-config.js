@@ -2,6 +2,9 @@ require('dotenv').config({
   path: '.env',
 });
 
+// logs to terminal
+console.log('proj id config :::  ', process.env.SANITY_PROJECT_ID);
+
 module.exports = {
   siteMetadata: {
     title: 'deverell.com',
@@ -11,18 +14,12 @@ module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     path: `${__dirname}/img/`,
-    //   },
-    // },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'g2f5nmlg',
-        dataset: 'production',
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
         watchMode: true,
         token: process.env.SANITY_TOKEN,
       },

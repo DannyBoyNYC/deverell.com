@@ -10,8 +10,8 @@ const PortableText = ({ blocks }) => (
     serializers={serializers}
     {...sanityClient}
     // PURPLE process.env
-    projectId="g2f5nmlg"
-    dataset="production"
+    projectId={process.env.SANITY_PROJECT_ID}
+    dataset={process.env.SANITY_DATASET}
   />
 );
 

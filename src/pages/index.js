@@ -41,12 +41,12 @@ function HomePage({ data: { posts } }) {
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
-              {node.image && (
+              {node.mainImage && (
                 <div
                   className="main-image-container"
                   style={{ marginTop: '1rem' }}
                 >
-                  <Img fluid={node.image.asset.fluid} />
+                  <Img fluid={node.mainImage.asset.fluid} />
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />

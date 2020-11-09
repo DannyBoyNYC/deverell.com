@@ -8,7 +8,7 @@ const serializers = {
   // }
   types: {
     mainImage: (props) => (
-      <img data-testing={process.env.SANITY_DATASET} alt={props.node.alt} />
+      <img data-testing={process.env.production} alt={props.node.alt} />
     ),
   },
 };

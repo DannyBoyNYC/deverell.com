@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 // import SEO from "../components/seo";
 import Img from 'gatsby-image';
 import Sidebar from '../src/components/sidebar/Sidebar';
@@ -17,10 +17,10 @@ const BlogPostTemplate = (props) => {
       <Sidebar />
       <div className="main">
         <div className="container">
-          {/* <Img
+          <Img
             fluid={sanityPost.mainImage.asset.fluid}
             alt={sanityPost.mainImage.alt}
-          /> */}
+          />
           <p className="small">
             {format(new Date(sanityPost.publishedAt), 'MMMM d, yyyy')}
           </p>

@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 // import SEO from "../components/seo";
+import Img from 'gatsby-image';
 import Sidebar from '../src/components/sidebar/Sidebar';
 import HomeLink from '../src/components/link/Link';
 import PortableText from '../src/components/portableText';
@@ -16,6 +17,10 @@ const BlogPostTemplate = (props) => {
       <Sidebar />
       <div className="main">
         <div className="container">
+          {/* <Img
+            fluid={sanityPost.mainImage.asset.fluid}
+            alt={sanityPost.mainImage.alt}
+          /> */}
           <p className="small">
             {format(new Date(sanityPost.publishedAt), 'MMMM d, yyyy')}
           </p>
@@ -40,6 +45,15 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      mainImage {
+        caption
+        alt
+        asset {
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid
+          }
+        }
       }
       publishedAt
       # _rawExcerpt

@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
+import Img from 'gatsby-image';
 import Nav from '../components/Nav';
 import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
@@ -28,6 +29,10 @@ const Blog = ({ data: { postPreviews } }) => {
         <div className="container" pagename={pageName}>
           {postPreviews.nodes.map((node) => (
             <div key={node.id}>
+              <Img
+                fluid={node.mainImage.asset.fluid}
+                alt={node.mainImage.alt}
+              />
               <p className="small">
                 {format(new Date(node.publishedAt), 'MMMM d, yyyy')}
               </p>
@@ -58,6 +63,15 @@ export const query = graphql`
         id
         slug {
           current
+        }
+        mainImage {
+          caption
+          alt
+          asset {
+            fluid(maxWidth: 800) {
+              ...GatsbySanityImageFluid
+            }
+          }
         }
         title
         publishedAt

@@ -46,78 +46,18 @@ function HomePage({ data: { posts } }) {
                   className="main-image-container"
                   style={{ marginTop: '1rem' }}
                 >
-                  <Img fluid={node.mainImage.asset.fluid} />
+                  <Img
+                    fluid={node.mainImage.asset.fluid}
+                    alt={node.mainImage.alt}
+                  />
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
             </div>
           ))}
-
           <HomeLink />
           <br />
-          {/* <pre>{JSON.stringify(nodes, null, 2)}</pre> */}
-
-          <hr />
-
-          {/* <hr />
-            <h2>All Publications</h2> */}
-
-          {/* <div className="booklist">
-            <a href="https://ecwpress.com/products/stung">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781770415959_c6938034-ab0d-4ddf-ac27-7ebc06588352_1024x1024.jpg?v=1603140835"
-                alt="Stung book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/needles">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781550225433_1024x1024.jpeg?v=1479930434"
-                alt="Needles book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/whipped">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781770413900_1024x1024.jpg?v=1506901255"
-                alt="Whipped book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/april-fool">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781770414082_1024x1024.jpg?v=1491937491"
-                alt="April Fool book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/street-legal">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781550226607_1024x1024.jpeg?v=1479931196"
-                alt="Street Legal book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/sing-a-worried-song">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781770412453_1024x1024.jpeg?v=1479931067"
-                alt="Sing a Worried Song book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/trial-of-passion">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781550225426_1024x1024.jpeg?v=1479932229"
-                alt="Trial of Passion book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/dance-of-shiva">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781550226591_1024x1024.jpeg?v=1479931548"
-                alt="Dance of Shiva book cover"
-              />
-            </a>
-            <a href="https://ecwpress.com/products/high-crimes">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0719/2207/products/9781550226973_1024x1024.jpeg?v=1479929821"
-                alt="High Crimes book cover"
-              />
-            </a>
-          </div> */}
+          {/* <pre>{JSON.stringify(nodes, null, 2)}</pre> */}q
         </div>
       </div>
     </>
@@ -141,6 +81,8 @@ export const HomePageQuery = graphql`
         title
         publishedAt
         mainImage {
+          caption
+          alt
           asset {
             fluid(maxWidth: 800) {
               ...GatsbySanityImageFluid

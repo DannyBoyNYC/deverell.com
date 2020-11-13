@@ -81,7 +81,6 @@ export const HomePageQuery = graphql`
         title
         publishedAt
         mainImage {
-          caption
           alt
           asset {
             fluid(maxWidth: 800) {

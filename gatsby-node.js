@@ -24,11 +24,6 @@ exports.createPages = async ({
           }
           pubdate
           link
-          image {
-            asset {
-              url
-            }
-          }
         }
       }
     }
@@ -39,7 +34,6 @@ exports.createPages = async ({
   }
 
   const { nodes: posts } = result.data.posts;
-  console.log(posts);
   const { nodes: books } = result.data.books;
 
   posts.forEach((post) => {

@@ -65,7 +65,6 @@ export const query = graphql`
           current
         }
         mainImage {
-          caption
           alt
           asset {
             fluid(maxWidth: 800) {

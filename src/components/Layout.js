@@ -26,15 +26,12 @@ const SidebarStyles = styled.div`
     margin-left: auto;
     margin-right: auto;
     @media (min-width: 1266px) {
-      /* width: 60%; */
-      /* margin-right: 3rem; */
-      /* max-width: 600px; */
     }
-    .side-subhead {
+    /* .side-subhead {
       font-style: italic;
       font-size: 2rem;
       margin-top: 1rem;
-    }
+    } */
   }
   .main {
     background-color: #e6e6e6;

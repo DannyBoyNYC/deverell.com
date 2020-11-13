@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
+import { SidebarStyles } from './styles';
+
 import Nav from '../Nav';
 
 const Sidebar = ({ contentType, bookCover }) => (

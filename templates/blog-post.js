@@ -14,7 +14,7 @@ const BlogPostTemplate = (props) => {
   } = props;
   return (
     <>
-      <Sidebar />
+      <Sidebar contentType="blog post" />
       <div className="main">
         <div className="container">
           <Img

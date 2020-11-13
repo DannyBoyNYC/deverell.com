@@ -1,16 +1,8 @@
-// const { isFuture } = require('date-fns');
-// const { format } = require('date-fns');
-
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const { Reporter } = require('gatsby');
-
 exports.createPages = async ({
   graphql,
   actions: { createPage },
   reporter,
 }) => {
-  // const blogPost = path.resolve(`./templates/blog-post.js`);
   const result = await graphql(`
     query {
       posts: allSanityPost {
@@ -23,18 +15,35 @@ exports.createPages = async ({
           publishedAt
         }
       }
+      books: allSanityBook {
+        nodes {
+          id
+          title
+          slug {
+            current
+          }
+          pubdate
+          link
+          image {
+            asset {
+              url
+            }
+          }
+        }
+      }
     }
   `);
 
   if (result.errors) {
-    // throw result.errors;
     reporter.panic('failed to create pages', result.errors);
   }
 
-  const { nodes } = result.data.posts;
+  const { nodes: posts } = result.data.posts;
+  console.log(posts);
+  const { nodes: books } = result.data.books;
 
-  nodes.forEach((node) => {
-    const { slug, id } = node;
+  posts.forEach((post) => {
+    const { slug, id } = post;
     createPage({
       path: `/blog/${slug.current}`,
       component: require.resolve('./templates/blog-post.js'),
@@ -43,8 +52,15 @@ exports.createPages = async ({
       },
     });
   });
-};
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   await createBlogPostPages(graphql, actions);
-// };
+  books.forEach((book) => {
+    const { slug, id } = book;
+    createPage({
+      path: `/book/${slug.current}`,
+      component: require.resolve('./templates/book.js'),
+      context: {
+        id,
+      },
+    });
+  });
+};

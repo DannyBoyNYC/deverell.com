@@ -22,7 +22,7 @@ const Books = ({ data: { books } }) => (
         <div className="page-details">
           <h1>Novels</h1>
           <h2 className="side-subhead">~ listing ~</h2>
-          <p>Select a title to read more on the publisher's website.</p>
+          <p>Select a title to learn more.</p>
         </div>
       </div>
     </div>
@@ -56,9 +56,10 @@ export const query = graphql`
         }
         pubdate
         link
-        image {
+        mainImage {
+          alt
           asset {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 800) {
               ...GatsbySanityImageFluid
             }
           }

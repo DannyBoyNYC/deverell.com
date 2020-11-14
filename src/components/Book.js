@@ -14,8 +14,7 @@ const BookDivSC = styled.div`
   p {
     margin: 0;
   }
-  a {
-    h2 {
+  h2 {
       color: var(--blue);
       font-size: 1.75rem;
     }

@@ -44,7 +44,7 @@ export default Books;
 
 export const query = graphql`
   query Books {
-    books: allSanityBook {
+    books: allSanityBook(sort: { fields: [pubdate], order: DESC }) {
       nodes {
         id
         title

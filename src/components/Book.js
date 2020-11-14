@@ -33,11 +33,11 @@ const SingleBook = ({ book }) => {
   return (
     <BookDivSC>
       <h2>
-        <Link to={`/book/${slug.current}`}>{title}</Link>
+        <Link to={`/books/${slug.current}`}>{title}</Link>
       </h2>
 
       <p className="small">{format(new Date(pubYear), 'MMMM d, yyyy')}</p>
-      <Link to={`/book/${slug.current}`}>
+      <Link to={`/books/${slug.current}`}>
         <Img fluid={mainImage.asset.fluid} alt={mainImage.alt} />
       </Link>
 

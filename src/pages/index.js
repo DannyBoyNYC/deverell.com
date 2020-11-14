@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Nav from '../components/Nav';
+import { SidebarMainPages } from '../components/sidebar';
 import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
 
@@ -12,25 +12,14 @@ import '../styles/styles.css';
 
 function HomePage({ data: { posts } }) {
   const { nodes } = posts;
+  const header = 'Welcome';
+  const blurb = {
+    block: `to the website of William Deverell, Canadian novelist and winner of the Dashiell Hammett Award for Literary Excellence in North American Crime Writing`,
+  };
 
   return (
     <>
-      <div className="sidebar">
-        <div className="sidebar-container">
-          <Nav />
-          <div className="page-details">
-            <h1>Welcome</h1>
-            <h2 className="side-subhead">~ nota bene ~</h2>
-            <p>
-              My website is currently being re-developed to permit some overdue
-              updating and modernizing. My Web mechanic is working on it as I
-              compose this note. (And no, it has not been hacked, it was just
-              feeling its age.)
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <SidebarMainPages header={header} blurb={blurb} />
       <div className="main">
         <div className="container">
           {nodes.map((node) => (
@@ -56,8 +45,6 @@ function HomePage({ data: { posts } }) {
             </div>
           ))}
           <HomeLink />
-          <br />
-          {/* <pre>{JSON.stringify(nodes, null, 2)}</pre> */}q
         </div>
       </div>
     </>

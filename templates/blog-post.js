@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import SEO from "../components/seo";
 import Img from 'gatsby-image';
-import Sidebar from '../src/components/sidebar/Sidebar';
+import { toPlainText } from '../src/lib/helpers';
+
+import { SidebarPosts } from '../src/components/sidebar';
 import HomeLink from '../src/components/link/Link';
 import PortableText from '../src/components/portableText';
 
@@ -14,7 +16,12 @@ const BlogPostTemplate = (props) => {
   } = props;
   return (
     <>
-      <Sidebar contentType="blog post" />
+      <SidebarPosts
+        contentType="blogPost"
+        header="blog post"
+        blurb={sanityPost._rawExcerpt}
+        // blurb={toPlainText(sanityPost._rawExcerpt)}
+      />
       <div className="main">
         <div className="container">
           <Img
@@ -55,7 +62,7 @@ export const query = graphql`
         }
       }
       publishedAt
-      # _rawExcerpt
+      _rawExcerpt
       _rawBody
     }
   }

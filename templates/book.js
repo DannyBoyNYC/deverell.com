@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { format } from 'date-fns';
 // import SEO from "../components/seo";
-import Sidebar from '../src/components/sidebar/Sidebar';
+import { SidebarBooks } from '../src/components/sidebar';
 import HomeLink from '../src/components/link/Link';
 import PortableText from '../src/components/portableText';
 
@@ -20,7 +19,7 @@ const BookTemplate = (props) => {
 
   return (
     <>
-      <Sidebar contentType="novel" bookCover={sanityBook} />
+      <SidebarBooks bookCover={sanityBook} header={sanityBook.title} />
       <div className="main">
         <div className="container">
           <p className="small">

@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     --lt-gray: #999;
     --dk-gray: #666;
     --edk-gray: #333;
-    --layout-gray: rgba(255, 255, 255, 0.7);
+    --background-gray: #e6e6e6;
     --red: #FF4949;
     --black: #222222;
     --yellow: #ffc600;
@@ -23,9 +23,8 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--black);
   }
 
-  fieldset {
-    border-color: rgba(0,0,0,0.1);
-    border-width: 1px;
+  img {
+    max-width: 100%;
   }
 
   button {
@@ -47,33 +46,7 @@ const GlobalStyles = createGlobalStyle`
     /* .gatsby-image-wrapper img[src*=base64\\,] {
       image-rendering: -moz-crisp-edges;
       image-rendering: pixelated;
-    } */
-
-  /* Scrollbar Styles */
-  body::-webkit-scrollbar {
-    width: 12px;
-  }
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--red) var(--white);
-  }
-  body::-webkit-scrollbar-track {
-    background: var(--white);
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--black) ;
-    border-radius: 6px;
-    border: 3px solid var(--white);
-  }
-
-  hr {
-    border: 1px solid var(--lt-gray);
-    margin: 3rem 0 1rem 0;
-  }
-
-  img {
-    max-width: 100%;
-  }
+    }  */
 `;
 
 export default GlobalStyles;

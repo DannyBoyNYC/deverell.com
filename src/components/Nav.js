@@ -48,7 +48,7 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/books/" activeClassName="activeStyles">
+          <Link to="/books/" activeClassName="activeStyles" partiallyActive>
             Books
           </Link>
         </li>

@@ -2,33 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import Nav from '../components/Nav';
+import { SidebarMainPages } from '../components/sidebar';
 import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
 
-const Biography = ({ data: { bio } }) => (
-  <>
-    <div className="sidebar">
-      <div className="sidebar-container">
-        <Nav />
-        <div className="page-details">
-          <h1>About William Deverell</h1>
-          <h2 className="side-subhead">~ biography ~</h2>
-          <p>
-            Winner of the Dashiell Hammett Award for Literary Excellence in
-            North American Crime Writing
-          </p>
+const Biography = ({ data: { bio } }) => {
+  const header = 'biography';
+  const blurb = {
+    block: `Winner of the Dashiell Hammett Award for Literary Excellence in North American Crime Writing`,
+  };
+  return (
+    <>
+      <SidebarMainPages header={header} blurb={blurb} />
+      <div className="main bio">
+        <div className="container">
+          <PortableText blocks={bio.nodes[0]._rawBody} />
+          <HomeLink />
         </div>
       </div>
-    </div>
-    <div className="main bio">
-      <div className="container">
-        <PortableText blocks={bio.nodes[0]._rawBody} />
-        <HomeLink />
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 Biography.propTypes = {
   data: PropTypes.object,

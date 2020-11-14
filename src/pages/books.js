@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Nav from '../components/Nav';
+import { SidebarMainPages } from '../components/sidebar';
 import HomeLink from '../components/link/Link';
 import SingleBook from '../components/Book';
 
@@ -14,30 +14,27 @@ const BookGridSC = styled.div`
   grid-auto-rows: auto auto 300px;
 `;
 
-const Books = ({ data: { books } }) => (
-  <>
-    <div className="sidebar">
-      <div className="sidebar-container">
-        <Nav />
-        <div className="page-details">
-          <h1>Novels</h1>
-          <h2 className="side-subhead">~ listing ~</h2>
-          <p>Select a title to learn more.</p>
+const Books = ({ data: { books } }) => {
+  const header = 'Books in print';
+  const blurb = {
+    block: `Novels by William Deverell. Select a title to learn more.`,
+  };
+  return (
+    <>
+      <SidebarMainPages header={header} blurb={blurb} />
+      <div className="main ">
+        <div className="container">
+          <BookGridSC>
+            {books.nodes.map((book) => (
+              <SingleBook key={book.id} book={book} />
+            ))}
+          </BookGridSC>
+          <HomeLink />
         </div>
       </div>
-    </div>
-    <div className="main ">
-      <div className="container">
-        <BookGridSC>
-          {books.nodes.map((book) => (
-            <SingleBook key={book.id} book={book} />
-          ))}
-        </BookGridSC>
-        <HomeLink />
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 Books.propTypes = {
   data: PropTypes.object,

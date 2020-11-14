@@ -50,7 +50,7 @@ exports.createPages = async ({
   books.forEach((book) => {
     const { slug, id } = book;
     createPage({
-      path: `/book/${slug.current}`,
+      path: `/books/${slug.current}`,
       component: require.resolve('./templates/book.js'),
       context: {
         id,

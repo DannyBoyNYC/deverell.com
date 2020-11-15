@@ -15,9 +15,8 @@ const BookDivSC = styled.div`
     margin: 0;
   }
   h2 {
-      color: var(--blue);
-      font-size: 1.75rem;
-    }
+    color: var(--blue);
+    font-size: 1.75rem;
   }
 `;
 
@@ -34,15 +33,10 @@ const SingleBook = ({ book }) => {
       <h2>
         <Link to={`/books/${slug.current}`}>{title}</Link>
       </h2>
-
       <p className="small">Published in {format(new Date(pubYear), 'yyyy')}</p>
       <Link to={`/books/${slug.current}`}>
         <Img fluid={mainImage.asset.fluid} alt={mainImage.alt} />
       </Link>
-
-      <a href={link} target="_blank" rel="noreferrer">
-        Learn more
-      </a>
     </BookDivSC>
   );
 };

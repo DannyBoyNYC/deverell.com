@@ -5,10 +5,10 @@ import PortableText from '../portableText';
 
 import Nav from '../Nav';
 
-import { SidebarStyles } from './styles';
+import { SidebarSC } from './styles';
 
 const Sidebar = ({ bookCover, blurb, header, variation }) => (
-  <SidebarStyles>
+  <SidebarSC>
     <div className="sidebar-container">
       <Nav />
       <div className="page-details">
@@ -26,7 +26,7 @@ const Sidebar = ({ bookCover, blurb, header, variation }) => (
         )}
       </div>
     </div>
-  </SidebarStyles>
+  </SidebarSC>
 );
 
 Sidebar.propTypes = {

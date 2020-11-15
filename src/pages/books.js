@@ -29,7 +29,7 @@ const Books = ({ data: { books } }) => {
               <SingleBook key={book.id} book={book} />
             ))}
           </BookGridSC>
-          <HomeLink />
+          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
         </div>
       </div>
     </>

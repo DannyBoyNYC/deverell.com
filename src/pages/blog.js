@@ -35,7 +35,7 @@ const Blog = ({ data: { postPreviews } }) => {
               <PortableText blocks={node._rawExcerpt} />
             </div>
           ))}
-          <HomeLink />
+          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
         </div>
       </div>
     </>

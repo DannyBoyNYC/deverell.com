@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SidebarStyles = styled.div`
+export const SidebarSC = styled.div`
   color: rgba(255, 255, 255, 0.9);
   background-color: var(--black);
   @media (min-width: 1266px) {

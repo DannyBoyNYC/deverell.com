@@ -1,3 +1,4 @@
+/* portable text styles */
 .bio figure {
   margin-left: 0;
 }
@@ -8,12 +9,3 @@
   float: right;
   border-radius: 4px;
 }
-/* .booklist {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-  grid-auto-rows: auto auto 300px;
-}
-.booklist a:hover {
-  opacity: 0.75;
-} */

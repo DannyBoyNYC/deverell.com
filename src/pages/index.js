@@ -44,7 +44,6 @@ function HomePage({ data: { posts } }) {
               <PortableText blocks={node._rawExcerpt} />
             </div>
           ))}
-          <HomeLink />
         </div>
       </div>
     </>

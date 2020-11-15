@@ -1,28 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const LinkSC = styled.div`
-  display: inline-block;
-  margin: 1rem 0;
-  a {
-    color: var(--eelt-gray);
-    font-weight: 500;
-    font-size: 0.85rem;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--blue);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-`;
+import { LinkSC } from './styles';
 
-const HomeLink = () => (
-  <LinkSC>
-    <Link to="/">&larr; back to home</Link>
-  </LinkSC>
+const LinkButton = ({ children, hrefLink }) => (
+  <LinkSC to={hrefLink}> {children}</LinkSC>
 );
 
-export default HomeLink;
+LinkButton.propTypes = {
+  children: PropTypes.object,
+  hrefLink: PropTypes.string,
+};
+
+export default LinkButton;

@@ -17,7 +17,7 @@ const Biography = ({ data: { bio } }) => {
       <div className="main bio">
         <div className="container">
           <PortableText blocks={bio.nodes[0]._rawBody} />
-          <HomeLink />
+          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
         </div>
       </div>
     </>

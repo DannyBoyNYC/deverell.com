@@ -26,18 +26,13 @@ const BookTemplate = (props) => {
             Published: {format(new Date(pubYear), 'yyyy')}
           </p>
           <h2>{sanityBook.title}</h2>
-          <p>
-            <a href={sanityBook.link} target="_blank" rel="noreferrer nofollow">
-              Learn more and purchase on the publisher's site
-            </a>
-          </p>
           <PortableText blocks={sanityBook._rawBody} />
           <p>
             <a href={sanityBook.link} target="_blank" rel="noreferrer nofollow">
               Learn more and purchase on the publisher's site
             </a>
           </p>
-          <HomeLink />
+          <HomeLink hrefLink="/books/">&larr; all books</HomeLink>
         </div>
       </div>
     </>

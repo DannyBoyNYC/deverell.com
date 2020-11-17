@@ -2,10 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
 import { SidebarMainPages } from '../components/sidebar';
 
 import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
+
+const PostIntroSC = styled.div`
+  margin-bottom: 3.5rem;
+  img {
+    margin-top: 1rem;
+  }
+`;
 
 const Blog = ({ data: { postPreviews } }) => {
   const header = 'blog posts';
@@ -19,18 +28,18 @@ const Blog = ({ data: { postPreviews } }) => {
       <div className="main">
         <div className="container">
           {postPreviews.nodes.map((node) => (
-            <div key={node.id}>
+            <PostIntroSC key={node.id}>
+              <p className="small">{node.publishedAt}</p>
+              <h2>
+                <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
+              </h2>
               <Img
                 fluid={node.mainImage.asset.fluid}
                 alt={node.mainImage.alt}
               />
-              <p className="small">{node.publishedAt}</p>
-
-              <h2>
-                <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
-              </h2>
               <PortableText blocks={node._rawExcerpt} />
-            </div>
+              <HomeLink hrefLink="/books/">read more &rarr; </HomeLink>
+            </PostIntroSC>
           ))}
           <HomeLink hrefLink="/">&larr; back to home</HomeLink>
         </div>

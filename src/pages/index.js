@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 
+import HomeLink from '../components/link/Link';
 import { SidebarMainPages } from '../components/sidebar';
 import PortableText from '../components/portableText';
 
 import '../styles/styles.css';
+
+const PostIntroSC = styled.div`
+  margin-bottom: 3rem;
+`;
 
 function HomePage({ data: { posts } }) {
   const { nodes } = posts;
@@ -21,7 +27,7 @@ function HomePage({ data: { posts } }) {
       <div className="main">
         <div className="container">
           {nodes.map((node) => (
-            <div key={node.id}>
+            <PostIntroSC key={node.id}>
               <p className="small">{node.publishedAt}</p>
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
@@ -38,7 +44,8 @@ function HomePage({ data: { posts } }) {
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
-            </div>
+              <HomeLink hrefLink="/books/">read more &rarr; </HomeLink>
+            </PostIntroSC>
           ))}
         </div>
       </div>

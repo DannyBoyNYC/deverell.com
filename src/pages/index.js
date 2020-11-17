@@ -44,7 +44,9 @@ function HomePage({ data: { posts } }) {
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
-              <HomeLink hrefLink="/books/">read more &rarr; </HomeLink>
+              <HomeLink hrefLink={`/blog/${node.slug.current}`}>
+                read more &rarr;{' '}
+              </HomeLink>
             </PostIntroSC>
           ))}
         </div>

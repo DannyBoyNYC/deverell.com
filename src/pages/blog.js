@@ -38,7 +38,9 @@ const Blog = ({ data: { postPreviews } }) => {
                 alt={node.mainImage.alt}
               />
               <PortableText blocks={node._rawExcerpt} />
-              <HomeLink hrefLink="/books/">read more &rarr; </HomeLink>
+              <HomeLink hrefLink={`/blog/${node.slug.current}`}>
+                read more &rarr;{' '}
+              </HomeLink>
             </PostIntroSC>
           ))}
           <HomeLink hrefLink="/">&larr; back to home</HomeLink>

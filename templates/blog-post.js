@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 // import { toPlainText } from '../src/lib/helpers';
 
 import { SidebarPosts } from '../src/components/sidebar';
+// import HomeLink from '../components/link/Link';
 import HomeLink from '../src/components/link/Link';
 import PortableText from '../src/components/portableText';
 
@@ -30,7 +31,7 @@ const BlogPostTemplate = (props) => {
           <p className="small">{sanityPost.publishedAt}</p>
           <h2>{sanityPost.title}</h2>
           <PortableText blocks={sanityPost._rawBody} />
-          <HomeLink />
+          <HomeLink hrefLink="/blog/">&larr; back to blog</HomeLink>
         </div>
       </div>
     </>

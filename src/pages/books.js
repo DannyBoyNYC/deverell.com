@@ -14,6 +14,10 @@ const BookGridSC = styled.div`
   grid-auto-rows: auto auto 300px;
 `;
 
+// const HomeLinkSC = styled.HomeLink`
+//   margin-top: 2rem;
+// `;
+
 const Books = ({ data: { books } }) => {
   const header = 'Books in print';
   const blurb = {
@@ -29,7 +33,7 @@ const Books = ({ data: { books } }) => {
               <SingleBook key={book.id} book={book} />
             ))}
           </BookGridSC>
-          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
+          {/* <HomeLink hrefLink="/">&larr; back to home</HomeLink> */}
         </div>
       </div>
     </>

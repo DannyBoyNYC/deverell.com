@@ -46,5 +46,9 @@ export const SidebarSC = styled.div`
   .page-details {
     margin-top: 5em;
     padding-bottom: 5em;
+    .book-container {
+      margin-top: 2rem;
+      max-width: 400px;
+    }
   }
 `;

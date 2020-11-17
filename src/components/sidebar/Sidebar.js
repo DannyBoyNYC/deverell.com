@@ -17,7 +17,7 @@ const Sidebar = ({ bookCover, blurb, header, variation }) => (
         {variation === 'mainPages' && <p>{blurb.block}</p>}
         {variation === 'posts' && <PortableText blocks={blurb} />}
         {variation === 'books' && (
-          <div style={{ marginTop: '2rem', maxWidth: '400px' }}>
+          <div className="book-container">
             <Img
               fluid={bookCover.mainImage.asset.fluid}
               alt={bookCover.mainImage.alt}

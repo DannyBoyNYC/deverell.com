@@ -1,11 +1,10 @@
-import { format } from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
-const BookDivSC = styled.div`
+const SingleBookSC = styled.div`
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 3;
@@ -21,23 +20,18 @@ const BookDivSC = styled.div`
 `;
 
 const SingleBook = ({ book }) => {
-  const { title, link, pubdate, mainImage, slug } = book;
-
-  const date = new Date(pubdate);
-  const pubYear = new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-  }).format(date);
+  const { title, pubdate, mainImage, slug } = book;
 
   return (
-    <BookDivSC>
+    <SingleBookSC>
       <h2>
         <Link to={`/books/${slug.current}`}>{title}</Link>
       </h2>
-      <p className="small">Published in {format(new Date(pubYear), 'yyyy')}</p>
+      <p className="small">Published in {pubdate}</p>
       <Link to={`/books/${slug.current}`}>
         <Img fluid={mainImage.asset.fluid} alt={mainImage.alt} />
       </Link>
-    </BookDivSC>
+    </SingleBookSC>
   );
 };
 

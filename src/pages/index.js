@@ -1,11 +1,9 @@
-import { format } from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { SidebarMainPages } from '../components/sidebar';
-import HomeLink from '../components/link/Link';
 import PortableText from '../components/portableText';
 
 import '../styles/styles.css';
@@ -24,9 +22,7 @@ function HomePage({ data: { posts } }) {
         <div className="container">
           {nodes.map((node) => (
             <div key={node.id}>
-              <p className="small">
-                {format(new Date(node.publishedAt), 'MMMM d, yyyy')}
-              </p>
+              <p className="small">{node.publishedAt}</p>
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
@@ -65,7 +61,7 @@ export const HomePageQuery = graphql`
           current
         }
         title
-        publishedAt
+        publishedAt(formatString: "MMMM Do YYYY")
         mainImage {
           alt
           asset {

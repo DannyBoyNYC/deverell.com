@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
@@ -25,9 +24,7 @@ const Blog = ({ data: { postPreviews } }) => {
                 fluid={node.mainImage.asset.fluid}
                 alt={node.mainImage.alt}
               />
-              <p className="small">
-                {format(new Date(node.publishedAt), 'MMMM d, yyyy')}
-              </p>
+              <p className="small">{node.publishedAt}</p>
 
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
@@ -65,7 +62,7 @@ export const query = graphql`
           }
         }
         title
-        publishedAt
+        publishedAt(formatString: "MMMM Do YYYY")
         _rawExcerpt
       }
     }

@@ -51,7 +51,7 @@ export const query = graphql`
         slug {
           current
         }
-        pubdate
+        pubdate(formatString: "YYYY")
         link
         mainImage {
           alt

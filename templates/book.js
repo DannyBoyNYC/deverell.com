@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { format } from 'date-fns';
 // import SEO from "../components/seo";
 import { SidebarBooks } from '../src/components/sidebar';
 import HomeLink from '../src/components/link/Link';
@@ -12,19 +11,12 @@ const BookTemplate = (props) => {
     data: { sanityBook },
   } = props;
 
-  const date = new Date(sanityBook.pubdate);
-  const pubYear = new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-  }).format(date);
-
   return (
     <>
       <SidebarBooks bookCover={sanityBook} header={sanityBook.title} />
       <div className="main">
         <div className="container">
-          <p className="small">
-            Published: {format(new Date(pubYear), 'yyyy')}
-          </p>
+          <p className="small">Published {sanityBook.pubdate}</p>
           <h2>{sanityBook.title}</h2>
           <PortableText blocks={sanityBook._rawBody} />
           <p>
@@ -50,7 +42,7 @@ export const query = graphql`
     sanityBook(id: { eq: $id }) {
       title
       link
-      pubdate
+      pubdate(formatString: "YYYY")
       mainImage {
         alt
         asset {

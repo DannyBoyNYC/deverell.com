@@ -1,10 +1,9 @@
-import { format } from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import SEO from "../components/seo";
 import Img from 'gatsby-image';
-import { toPlainText } from '../src/lib/helpers';
+// import { toPlainText } from '../src/lib/helpers';
 
 import { SidebarPosts } from '../src/components/sidebar';
 import HomeLink from '../src/components/link/Link';
@@ -28,9 +27,7 @@ const BlogPostTemplate = (props) => {
             fluid={sanityPost.mainImage.asset.fluid}
             alt={sanityPost.mainImage.alt}
           />
-          <p className="small">
-            {format(new Date(sanityPost.publishedAt), 'MMMM d, yyyy')}
-          </p>
+          <p className="small">{sanityPost.publishedAt}</p>
           <h2>{sanityPost.title}</h2>
           <PortableText blocks={sanityPost._rawBody} />
           <HomeLink />
@@ -61,7 +58,7 @@ export const query = graphql`
           }
         }
       }
-      publishedAt
+      publishedAt(formatString: "MMMM Do, yyyy")
       _rawExcerpt
       _rawBody
     }

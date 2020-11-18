@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { SidebarMainPages } from '../components/sidebar';
-import HomeLink from '../components/link/Link';
+// import { SpecialLink } from '../components/link';
 import SingleBook from '../components/Book';
 
 const BookGridSC = styled.div`
@@ -13,10 +13,6 @@ const BookGridSC = styled.div`
   gap: 2rem;
   grid-auto-rows: auto auto 300px;
 `;
-
-// const HomeLinkSC = styled.HomeLink`
-//   margin-top: 2rem;
-// `;
 
 const Books = ({ data: { books } }) => {
   const header = 'Books in print';
@@ -33,7 +29,6 @@ const Books = ({ data: { books } }) => {
               <SingleBook key={book.id} book={book} />
             ))}
           </BookGridSC>
-          {/* <HomeLink hrefLink="/">&larr; back to home</HomeLink> */}
         </div>
       </div>
     </>

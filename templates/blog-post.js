@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import SEO from "../components/seo";
 import Img from 'gatsby-image';
-// import { toPlainText } from '../src/lib/helpers';
 
 import { SidebarPosts } from '../src/components/sidebar';
-// import HomeLink from '../components/link/Link';
-import HomeLink from '../src/components/link/Link';
+import { SpecialLink } from '../src/components/link';
 import PortableText from '../src/components/portableText';
 
 const BlogPostTemplate = (props) => {
@@ -20,7 +18,6 @@ const BlogPostTemplate = (props) => {
         contentType="blogPost"
         header="blog post"
         blurb={sanityPost._rawExcerpt}
-        // blurb={toPlainText(sanityPost._rawExcerpt)}
       />
       <div className="main">
         <div className="container">
@@ -31,7 +28,7 @@ const BlogPostTemplate = (props) => {
           <p className="small">{sanityPost.publishedAt}</p>
           <h2>{sanityPost.title}</h2>
           <PortableText blocks={sanityPost._rawBody} />
-          <HomeLink hrefLink="/blog/">&larr; back to blog</HomeLink>
+          <SpecialLink hrefLink="/blog/">&larr; back to blog</SpecialLink>
         </div>
       </div>
     </>

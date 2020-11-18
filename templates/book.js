@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // import SEO from "../components/seo";
 import { SidebarBooks } from '../src/components/sidebar';
-import HomeLink from '../src/components/link/Link';
+import { SpecialLink } from '../src/components/link';
 import PortableText from '../src/components/portableText';
 
 const BookTemplate = (props) => {
@@ -24,7 +24,7 @@ const BookTemplate = (props) => {
               Learn more and purchase on the publisher's site
             </a>
           </p>
-          <HomeLink hrefLink="/books/">&larr; all books</HomeLink>
+          <SpecialLink hrefLink="/books/">&larr; all books</SpecialLink>
         </div>
       </div>
     </>

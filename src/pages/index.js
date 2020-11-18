@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import HomeLink from '../components/link/Link';
+import { SpecialLink } from '../components/link';
 import { SidebarMainPages } from '../components/sidebar';
 import PortableText from '../components/portableText';
 
@@ -44,9 +44,9 @@ function HomePage({ data: { posts } }) {
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
-              <HomeLink hrefLink={`/blog/${node.slug.current}`}>
-                read more &rarr;{' '}
-              </HomeLink>
+              <SpecialLink hrefLink={`/blog/${node.slug.current}`}>
+                read more &rarr;
+              </SpecialLink>
             </PostIntroSC>
           ))}
         </div>

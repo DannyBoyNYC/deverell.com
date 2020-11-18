@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import { SidebarMainPages } from '../components/sidebar';
-import HomeLink from '../components/link/Link';
+import { SpecialLink } from '../components/link';
 import PortableText from '../components/portableText';
 
 const Biography = ({ data: { bio } }) => {
@@ -17,7 +17,7 @@ const Biography = ({ data: { bio } }) => {
       <div className="main bio">
         <div className="container">
           <PortableText blocks={bio.nodes[0]._rawBody} />
-          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
+          <SpecialLink hrefLink="/">&larr; back to home</SpecialLink>
         </div>
       </div>
     </>

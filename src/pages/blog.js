@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { SidebarMainPages } from '../components/sidebar';
 
-import HomeLink from '../components/link/Link';
+import { SpecialLink } from '../components/link';
 import PortableText from '../components/portableText';
 
 const PostIntroSC = styled.div`
@@ -38,12 +38,12 @@ const Blog = ({ data: { postPreviews } }) => {
                 alt={node.mainImage.alt}
               />
               <PortableText blocks={node._rawExcerpt} />
-              <HomeLink hrefLink={`/blog/${node.slug.current}`}>
+              <SpecialLink hrefLink={`/blog/${node.slug.current}`}>
                 read more &rarr;{' '}
-              </HomeLink>
+              </SpecialLink>
             </PostIntroSC>
           ))}
-          <HomeLink hrefLink="/">&larr; back to home</HomeLink>
+          <SpecialLink hrefLink="/">&larr; back to home</SpecialLink>
         </div>
       </div>
     </>

@@ -11,10 +11,38 @@ import PortableText from '../components/portableText';
 import '../styles/styles.css';
 
 const PostIntroSC = styled.div`
-  margin-bottom: 3rem;
   .main-image-container {
-    margin-top: 1rem;
-    width: 440px;
+    margin-top: 1.5rem;
+  }
+  @media (min-width: 1266px) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'date date date date date'
+      'headLine headLine headLine headLine headLine'
+      'img img content content content'
+      '. . . . btn';
+    .small {
+      grid-area: date;
+    }
+    h2 {
+      grid-area: headLine;
+    }
+
+    .main-image-container {
+      grid-area: img;
+    }
+    .main-image-container + p,
+    .main-image-container + div {
+      grid-area: content;
+    }
+    p + a,
+    div + a {
+      grid-area: btn;
+      text-align: center;
+    }
   }
 `;
 

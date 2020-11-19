@@ -12,7 +12,7 @@ import PortableText from '../components/portableText';
 const PostIntroSC = styled.div`
   margin-bottom: 3.5rem;
   img {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
   }
   .main-image-container {
     margin-top: 1rem;
@@ -43,7 +43,6 @@ const Blog = ({ data: { postPreviews } }) => {
                   alt={node.mainImage.alt}
                 />
               </div>
-
               <PortableText blocks={node._rawExcerpt} />
               <SpecialLink hrefLink={`/blog/${node.slug.current}`}>
                 read more &rarr;{' '}
@@ -65,7 +64,7 @@ export default Blog;
 
 export const query = graphql`
   query PostPageQuery {
-    postPreviews: allSanityPost {
+    postPreviews: allSanityPost(sort: { fields: [publishedAt], order: DESC }) {
       nodes {
         id
         slug {

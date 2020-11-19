@@ -9,8 +9,8 @@ module.exports = {
     description: 'The website of William Deverell',
   },
   plugins: [
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',

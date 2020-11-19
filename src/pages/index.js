@@ -12,6 +12,10 @@ import '../styles/styles.css';
 
 const PostIntroSC = styled.div`
   margin-bottom: 3rem;
+  .main-image-container {
+    margin-top: 1rem;
+    width: 440px;
+  }
 `;
 
 function HomePage({ data: { posts } }) {
@@ -33,10 +37,7 @@ function HomePage({ data: { posts } }) {
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
               {node.mainImage && (
-                <div
-                  className="main-image-container"
-                  style={{ marginTop: '1rem' }}
-                >
+                <div className="main-image-container">
                   <Img
                     fluid={node.mainImage.asset.fluid}
                     alt={node.mainImage.alt}
@@ -63,7 +64,7 @@ export default HomePage;
 
 export const HomePageQuery = graphql`
   query AllSanityPost {
-    posts: allSanityPost {
+    posts: allSanityPost(sort: { fields: [publishedAt], order: DESC }) {
       nodes {
         id
         slug {

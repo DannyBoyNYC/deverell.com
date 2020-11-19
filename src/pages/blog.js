@@ -14,6 +14,10 @@ const PostIntroSC = styled.div`
   img {
     margin-top: 1rem;
   }
+  .main-image-container {
+    margin-top: 1rem;
+    width: 440px;
+  }
 `;
 
 const Blog = ({ data: { postPreviews } }) => {
@@ -33,10 +37,13 @@ const Blog = ({ data: { postPreviews } }) => {
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
-              <Img
-                fluid={node.mainImage.asset.fluid}
-                alt={node.mainImage.alt}
-              />
+              <div className="main-image-container">
+                <Img
+                  fluid={node.mainImage.asset.fluid}
+                  alt={node.mainImage.alt}
+                />
+              </div>
+
               <PortableText blocks={node._rawExcerpt} />
               <SpecialLink hrefLink={`/blog/${node.slug.current}`}>
                 read more &rarr;{' '}

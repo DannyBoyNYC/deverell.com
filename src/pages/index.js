@@ -64,13 +64,17 @@ export default HomePage;
 
 export const HomePageQuery = graphql`
   query AllSanityPost {
-    posts: allSanityPost(sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(
+      filter: { homepage: { eq: true } }
+      sort: { fields: [publishedAt], order: DESC }
+    ) {
       nodes {
         id
         slug {
           current
         }
         title
+        homepage
         publishedAt(formatString: "MMMM Do YYYY")
         mainImage {
           alt

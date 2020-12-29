@@ -12,24 +12,18 @@ export const SidebarSC = styled.div`
     text-align: left;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1266px) {
-    }
-    .side-subhead {
-      font-style: italic;
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
   }
   .side-subhead {
     font-style: italic;
     font-size: 2rem;
     margin-top: 1rem;
-    padding-right: 5rem;
     text-align: center;
+    @media (min-width: 1266px) {
+      padding-right: 5rem;
+    }
   }
   .main {
     background-color: #e6e6e6;
-    /* background-image: url('../assets/images/rag.png'); */
     @media (min-width: 1266px) {
       width: 60%;
     }
@@ -39,8 +33,6 @@ export const SidebarSC = styled.div`
       padding-bottom: 4em;
       margin-left: auto;
       margin-right: auto;
-      @media (min-width: 1266px) {
-      }
     }
   }
   .page-details {

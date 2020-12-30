@@ -35,9 +35,11 @@ const Typography = createGlobalStyle`
   a {
     color: var(--blue);
     text-decoration: none;
-&:hover {
-  text-decoration: underline;
-}
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 12%;
+    }
   }
   h2 {
     text-decoration: none;
@@ -51,7 +53,10 @@ const Typography = createGlobalStyle`
     display: inline;
     line-height: 1;
   }
-
+p strong em {
+  font-style: italic;
+  font-weight: 500;
+}
   .center {
     text-align: center;
   }

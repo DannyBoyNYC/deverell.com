@@ -31,7 +31,7 @@ const Sidebar = ({ bookCover, blurb, header, variation }) => (
 
 Sidebar.propTypes = {
   bookCover: PropTypes.object,
-  blurb: PropTypes.object,
+  blurb: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   header: PropTypes.string,
   variation: PropTypes.string,
 };

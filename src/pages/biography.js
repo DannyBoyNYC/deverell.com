@@ -15,7 +15,10 @@ const Biography = ({ data: { bio } }) => {
     <>
       <SidebarMainPages header={header} blurb={blurb} />
       <div className="main bio">
+        {/* <h1>Testing</h1> */}
         <div className="container">
+          <PortableText blocks={bio.nodes[1]._rawBody} />
+          <hr />
           <PortableText blocks={bio.nodes[0]._rawBody} />
           <SpecialLink hrefLink="/">&larr; back to home</SpecialLink>
         </div>

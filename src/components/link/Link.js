@@ -8,7 +8,7 @@ const LinkButton = ({ children, hrefLink }) => (
 );
 
 LinkButton.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   hrefLink: PropTypes.string,
 };
 

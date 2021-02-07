@@ -23,7 +23,7 @@ const PostIntroSC = styled.div`
 const Blog = ({ data: { postPreviews } }) => {
   const header = 'blog posts';
   const blurb = {
-    block: `The future home of my various noodlings. Mostly, but not
+    block: `The home of my various noodlings. Mostly, but not
     exclusively, about my books.`,
   };
   return (

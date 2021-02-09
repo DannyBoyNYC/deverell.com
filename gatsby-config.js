@@ -21,5 +21,11 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-Z1X8VWYK7K'],
+      },
+    },
   ],
 };

@@ -9,7 +9,7 @@ import PortableText from '../components/portableText';
 const Biography = ({ data: { bio } }) => {
   const header = 'biography';
   const blurb = {
-    block: `Winner of the Dashiell Hammett Award for Literary Excellence in North American Crime Writing. He can be reached at william.deverell@gmail.com`,
+    block: `Winner of the Dashiell Hammett Award for Literary Excellence in North American Crime Writing`,
   };
   return (
     <>

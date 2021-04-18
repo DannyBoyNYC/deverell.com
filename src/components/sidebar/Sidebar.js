@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import PortableText from '../portableText';
+import { SocialMedia } from '../social';
 
 import Nav from '../Nav';
 
@@ -25,6 +26,7 @@ const Sidebar = ({ bookCover, blurb, header, variation }) => (
           </div>
         )}
       </div>
+      <SocialMedia />
     </div>
   </SidebarSC>
 );

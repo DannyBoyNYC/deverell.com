@@ -64,12 +64,16 @@ function HomePage({ data: { posts } }) {
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
-              {node.mainImage && (
+              {node.mainImage.asset && (
                 <div className="main-image-container">
-                  <Img
-                    fluid={node.mainImage.asset.fluid}
-                    alt={node.mainImage.alt}
-                  />
+                  {node.mainImage.asset.fluid ? (
+                    <Img
+                      fluid={node.mainImage.asset.fluid}
+                      alt={node.mainImage.alt}
+                    />
+                  ) : (
+                    ''
+                  )}
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
@@ -107,6 +111,7 @@ export const HomePageQuery = graphql`
         mainImage {
           alt
           asset {
+            # url
             fluid(maxWidth: 800) {
               ...GatsbySanityImageFluid
             }

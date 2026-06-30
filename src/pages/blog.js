@@ -37,12 +37,11 @@ const Blog = ({ data: { postPreviews } }) => {
               <h2>
                 <Link to={`/blog/${node.slug.current}`}>{node.title}</Link>
               </h2>
-              <div className="main-image-container">
-                <Img
-                  fluid={node.mainImage.asset.fluid}
-                  alt={node.mainImage.alt}
-                />
-              </div>
+              {node.mainImage?.asset?.fluid && (
+                <div className="main-image-container">
+                  <Img fluid={node.mainImage.asset.fluid} alt={node.mainImage.alt} />
+                </div>
+              )}
               <PortableText blocks={node._rawExcerpt} />
               <SpecialLink hrefLink={`/blog/${node.slug.current}`}>
                 read more &rarr;{' '}

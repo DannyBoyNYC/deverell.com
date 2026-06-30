@@ -5,11 +5,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "GATSBY_ENV=development cross-env GATSBY_GRAPHQL_IDE=playground  gatsby develop",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider gatsby build",
+    "dev": "GATSBY_ENV=development cross-env NODE_OPTIONS=--openssl-legacy-provider GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "start": "npm run dev",
+    "serve": "cross-env NODE_OPTIONS=--openssl-legacy-provider gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {

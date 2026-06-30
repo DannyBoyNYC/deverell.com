@@ -22,11 +22,11 @@ const BlogPostTemplate = (props) => {
       <div className="main">
         <div className="container">
           {sanityPost.mainImage?.asset?.fluid && (
-              <Img
-                fluid={sanityPost.mainImage.asset.fluid}
-                alt={sanityPost.mainImage.alt}
-              />
-            )}
+            <Img
+              fluid={sanityPost.mainImage.asset.fluid}
+              alt={sanityPost.mainImage.alt}
+            />
+          )}
           <p className="small">{sanityPost.publishedAt}</p>
           <h2>{sanityPost.title}</h2>
           <PortableText blocks={sanityPost._rawBody} />

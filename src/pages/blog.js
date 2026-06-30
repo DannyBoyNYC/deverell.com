@@ -39,7 +39,10 @@ const Blog = ({ data: { postPreviews } }) => {
               </h2>
               {node.mainImage?.asset?.fluid && (
                 <div className="main-image-container">
-                  <Img fluid={node.mainImage.asset.fluid} alt={node.mainImage.alt} />
+                  <Img
+                    fluid={node.mainImage.asset.fluid}
+                    alt={node.mainImage.alt}
+                  />
                 </div>
               )}
               <PortableText blocks={node._rawExcerpt} />
